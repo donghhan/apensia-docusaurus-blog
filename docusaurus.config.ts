@@ -9,11 +9,12 @@ const chConfig = {
     theme: "github-dark",
   },
 };
+
 const config: Config = {
   title: "Apensia Devblog",
   tagline: "Welcome to Apensia Devblog",
   favicon: "img/favicon.ico",
-  url: "https://your-docusaurus-site.example.com",
+  url: "https://apensiablog.dev",
   baseUrl: "/",
   organizationName: "donghhan",
   projectName: "Apensia Devblog",
@@ -53,10 +54,16 @@ const config: Config = {
       },
       items: [
         {
-          type: "docSidebar",
-          sidebarId: "tutorialSidebar",
+          type: "doc",
+          docId: "intro",
           position: "left",
-          label: "Tutorial",
+          label: "Letha",
+        },
+        {
+          type: "docSidebar",
+          sidebarId: "sfm",
+          position: "left",
+          label: "SFM",
         },
         { to: "/blog", label: "Blog", position: "left" },
         {

@@ -17,10 +17,13 @@
   "dependencies": {
     "@docusaurus/core": "3.5.2",
     "@docusaurus/preset-classic": "3.5.2",
+    "@docusaurus/theme-live-codeblock": "^3.6.3",
+    "@docusaurus/theme-mermaid": "^3.5.2",
     "@mdx-js/react": "^3.0.0",
     "clsx": "^2.0.0",
     "codehike": "1.0.0",
     "lottie-react": "^2.4.0",
+    "plugin-image-zoom": "github:flexanalytics/plugin-image-zoom",
     "prism-react-renderer": "^2.3.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",

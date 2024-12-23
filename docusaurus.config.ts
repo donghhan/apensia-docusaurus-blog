@@ -24,7 +24,7 @@ const config: Config = {
     defaultLocale: "en",
     locales: ["en"],
   },
-
+  plugins: ["plugin-image-zoom"],
   presets: [
     [
       "classic",
@@ -43,8 +43,14 @@ const config: Config = {
       } satisfies Preset.Options,
     ],
   ],
-
+  themes: ["@docusaurus/theme-mermaid"],
+  markdown: {
+    mermaid: true,
+  },
   themeConfig: {
+    colorMode: {
+      defaultMode: "dark",
+    },
     image: "img/docusaurus-social-card.jpg",
     navbar: {
       title: "Apensia Devblog",
@@ -73,6 +79,9 @@ const config: Config = {
         },
       ],
     },
+    metadata: [
+      { name: "Apensia Devblog", content: "Apensia personal developer blog" },
+    ],
     footer: {
       style: "dark",
       copyright: `Copyright © ${new Date().getFullYear()} Apensia Devblog, Inc. Built with Docusaurus.`,
@@ -80,6 +89,16 @@ const config: Config = {
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
+    },
+    imageZoom: {
+      selector: ".markdown img",
+      options: {
+        margin: 24,
+        background: "#BADA55",
+        scrollOffset: 0,
+        container: "#zoom-container",
+        template: "#zoom-template",
+      },
     },
   } satisfies Preset.ThemeConfig,
 };

@@ -10,8 +10,8 @@ const sidebars: SidebarsConfig = {
       link: {
         type: "generated-index",
         title: "Authentication",
-        description: "Basic learning",
-        slug: "/category/authentication/intro",
+        description: "Authentication",
+        slug: "/authentication/intro",
         keywords: ["guides"],
       },
       items: ["authentication/jwt"],

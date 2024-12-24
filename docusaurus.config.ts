@@ -63,7 +63,7 @@ const config: Config = {
           type: "doc",
           docId: "intro",
           position: "left",
-          label: "Letha",
+          label: "Fullstack",
         },
         {
           type: "docSidebar",

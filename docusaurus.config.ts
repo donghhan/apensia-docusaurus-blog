@@ -24,7 +24,7 @@ const config: Config = {
     defaultLocale: "en",
     locales: ["en"],
   },
-  plugins: ["plugin-image-zoom"],
+  plugins: ["plugin-image-zoom", "@docusaurus/theme-live-codeblock"],
   presets: [
     [
       "classic",
@@ -43,11 +43,14 @@ const config: Config = {
       } satisfies Preset.Options,
     ],
   ],
-  themes: ["@docusaurus/theme-mermaid"],
+  themes: ["@docusaurus/theme-mermaid", "@docusaurus/theme-live-codeblock"],
   markdown: {
     mermaid: true,
   },
   themeConfig: {
+    liveCodeBlock: {
+      playgroundPosition: "bottom",
+    },
     colorMode: {
       defaultMode: "dark",
     },

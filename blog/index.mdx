@@ -2,7 +2,7 @@
 title: Client component and browser API
 description: The reason why `localStorage`/`sessionStorage` is undefined in client-side component
 slug: client-component-and-browser-api/
-tags: [localStorage, sessionStorage, FOUC, next, client component]
+tags: [sessionStorage, FOUC, next, client component]
 ---
 
 import { Scrollycoding } from "/src/components/scrollycoding";
@@ -46,7 +46,7 @@ Hydration indicates the process of attaching e vent listeners to the DOM in orde
 
 [^1]: [How are Client Components Rendered?](https://nextjs.org/docs/app/building-your-application/rendering/client-components#how-are-client-components-rendered)
 
-## What Happened?
+## `ReferenceError: sessionStorage is not defined`
 
 I was making a splash animation that sholud be _only once_ by the time users visit my website unless they close the browser window.
 To do this, I needed to use [`sessionStorage`](https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage) from [Window](https://developer.mozilla.org/en-US/docs/Web/API/Window) interface.
@@ -65,13 +65,26 @@ Therefore, I got an error of `ReferenceError(): window is not defined` during pr
 
 ## Workarounds
 
-There are two ways I found out to solve this error according to
+There are two ways I found out to solve this error according to Next.js documentation.
 
 ### Skipping SSR
 
 [`next/dynamic`](https://nextjs.org/docs/app/building-your-application/optimizing/lazy-loading#nextdynamic) has option for allowing us to [skip SSR](https://nextjs.org/docs/app/building-your-application/optimizing/lazy-loading#skipping-ssr)
 by adding `ssr: false`.
 By doing this, we can force to cancel SSR so that component should only be run on pure client-side.
+
+With my
+
+```js
+function lorem(ipsum, dolor = 1) {
+  const sit = ipsum == null ? 0 : ipsum.sit;
+  // !diff -
+  dolor = ipsum - sit;
+  // !diff +
+  dolor = sit - amet(dolor);
+  return sit ? consectetur(ipsum) : [];
+}
+```
 
 ### Using `useEffect` hook
 
@@ -88,4 +101,8 @@ useEffect(() => {
 // ...
 ```
 
-### Solution
+## Solution
+
+I used both methods (skipping SSR & traditional `useEffect` hook) to solve this problem.
+
+### Skipping SSR

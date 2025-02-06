@@ -32,7 +32,7 @@ const config: Config = {
         docs: {
           beforeDefaultRemarkPlugins: [[remarkCodeHike, chConfig]],
           recmaPlugins: [[recmaCodeHike, chConfig]],
-          sidebarPath: "./sidebars/sidebars.ts",
+          sidebarPath: "./sidebars.ts",
         },
         blog: {
           showReadingTime: true,
@@ -67,15 +67,20 @@ const config: Config = {
           type: "doc",
           position: "left",
           docId: "intro",
+          label: "Welcome",
+        },
+        {
+          type: "docSidebar",
+          position: "left",
+          sidebarId: "frontend",
           label: "Frontend",
         },
         {
           type: "docSidebar",
           position: "left",
           sidebarId: "backend",
-          label: "backend",
+          label: "Backend",
         },
-        { to: "/ml", label: "ML", position: "left" },
         { to: "/blog", label: "Blog", position: "left" },
         {
           href: "https://github.com/donghhan/apensia-docusaurus-blog",

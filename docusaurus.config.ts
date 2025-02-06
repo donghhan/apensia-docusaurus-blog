@@ -24,7 +24,7 @@ const config: Config = {
     defaultLocale: "en",
     locales: ["en"],
   },
-  plugins: ["plugin-image-zoom", "@docusaurus/theme-live-codeblock"],
+  plugins: ["plugin-image-zoom"],
   presets: [
     [
       "classic",
@@ -32,7 +32,7 @@ const config: Config = {
         docs: {
           beforeDefaultRemarkPlugins: [[remarkCodeHike, chConfig]],
           recmaPlugins: [[recmaCodeHike, chConfig]],
-          sidebarPath: "./sidebars.ts",
+          sidebarPath: "./sidebars/sidebars.ts",
         },
         blog: {
           showReadingTime: true,
@@ -56,24 +56,26 @@ const config: Config = {
     },
     image: "img/docusaurus-social-card.jpg",
     navbar: {
+      hideOnScroll: true,
       title: "Apensia Devblog",
       logo: {
-        alt: "My Site Logo",
+        alt: "Apensia Devblog logo",
         src: "img/logo.svg",
       },
       items: [
         {
           type: "doc",
-          docId: "intro",
           position: "left",
-          label: "Fullstack",
+          docId: "intro",
+          label: "Frontend",
         },
         {
           type: "docSidebar",
-          sidebarId: "sfm",
           position: "left",
-          label: "SFM",
+          sidebarId: "backend",
+          label: "backend",
         },
+        { to: "/ml", label: "ML", position: "left" },
         { to: "/blog", label: "Blog", position: "left" },
         {
           href: "https://github.com/donghhan/apensia-docusaurus-blog",
